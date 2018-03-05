@@ -1,0 +1,10 @@
+$sqlCheckAndGet = "SELECT column1, $column2 FROM $tablename WHERE column1='someValue'";
+$result = $conn->query($sqlCheckAndGet);
+if ($result->num_rows > 0) {
+    // print_r ($result);
+    $sqlCheckAndGet2 = "SELECT column1, $column2 FROM $tablename WHERE column1 ='$someValue' AND $column2 != '0'";
+    $result2 = $conn->query($sqlCheckAndGet2);
+    if ($result2->num_rows > 0) {
+    // print_r ($result);
+    die('There is already a ' . $workouttype . ' entry for that date...');
+    }
