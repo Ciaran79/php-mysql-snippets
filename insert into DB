@@ -1,0 +1,12 @@
+$sql = "INSERT INTO $tablename ($column1, $column2, column3)
+    VALUES ($value1, $value2, value3)";
+    
+    if ($conn->query($sql) === TRUE) {
+        $last_id = $conn->insert_id;
+        echo "New record created successfully on $wkdate" . $last_id;
+    
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+}
+$conn->close();
